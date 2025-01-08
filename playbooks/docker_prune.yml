@@ -1,0 +1,9 @@
+---
+- hosts: all
+
+  become: true
+  tasks:
+    - name: Prune unused Docker objects
+      docker_system:
+        state: prune
+        remove_all: yes
